@@ -1,0 +1,126 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Verdana;
+	font-size: 16px;
+	width: 800px;
+	padding-left: 15px;
+}
+
+h1 {
+	font-size: 150%;
+}
+
+textarea {
+	width: 600px;
+	padding: 6px;
+}
+
+#comments {
+	padding: 5px 0;
+}
+
+.a_comment {
+	font-size: 14px;
+	margin-bottom: 3px;
+}
+
+.a_comment:nth-child(2n) {
+	background-color: #eee;
+}
+
+.a_comment em {
+	font-size: 10px;
+}
+
+#rate {
+	background-color: #999;
+	color: #fff;
+	font-size: 18px;
+	padding: 0 2px;
+	border-radius:         2px;
+	-moz-border-radius:    2px;
+	-webkit-border-radius: 2px;
+}
+
+#rate.plus {
+	background-color: #7c7;
+}
+
+#rate.minus {
+	background-color: #d77;
+}
+
+#reset {
+	color: #666;
+	border-bottom: 1px solid;
+	padding-bottom: 2px;
+	cursor: pointer;
+}
+
+/* -----------  ComSym  -------------- */
+
+.comsym-btn {
+	border: 1px solid #fff;
+	border-radius:         5px;
+	-moz-border-radius:    5px;
+	-webkit-border-radius: 5px;
+	background-color: #086CA2;
+	display: inline-block;
+	padding: 3px;
+	overflow: hidden;
+	clear: both;
+	position: relative;
+	margin: 5px 0;
+	cursor: pointer;
+}
+
+.comsym-label_holder {
+	float: left;
+	padding: 4px 8px;
+}
+
+.comsym-label {
+	color: #fff;
+	font-weight: bold;
+	text-align: center;
+	text-transform: capitalize;
+	line-height: 24px;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+.comsym-plusminus_holder {
+	float: left;
+	width: 18px;
+}
+
+.comsym-plus_btn, .comsym-minus_btn {
+	cursor: pointer;
+	padding: 1px;
+	width: 16px;
+	height: 16px;
+	background-repeat: no-repeat;
+}
+
+.comsym-plus_btn {
+	background-image: url(plus.png);
+}
+
+.comsym-minus_btn {
+	background-image: url(minus.png);
+}
+
+.comsym-when_on_plus {
+	background-color: #21BF44;
+}
+
+.comsym-when_on_minus {
+	background-color: #FD856E;
+}
