@@ -8,27 +8,27 @@
 	<script type="text/javascript">
 	function postComment(rate)
 	{
-		var msg = $F('comment');
+		var msg = w.getMessage();
 		if (!msg.empty())
 		{
 			var c = new Element('div', { 'className': 'a_comment' });
 			c.appendChild(new Element('em').update('[Rate: ' + rate + '] '));
 			c.appendChild(new Element('span').update(msg));
 			$('comments').appendChild(c);
-
-			var r = $('rate');
-			var curr = parseInt(r.innerHTML);
-			if (curr < 0)
-				r.removeClassName('minus');
-			else if (curr > 0)
-				r.removeClassName('plus');
-			curr += rate;
-			if (curr < 0)
-				r.addClassName('minus');
-			else if (curr > 0)
-				r.addClassName('plus');
-			r.update(curr);
 		}
+
+		var r = $('rate');
+		var curr = parseInt(r.innerHTML);
+		if (curr < 0)
+			r.removeClassName('minus');
+		else if (curr > 0)
+			r.removeClassName('plus');
+		curr += rate;
+		if (curr < 0)
+			r.addClassName('minus');
+		else if (curr > 0)
+			r.addClassName('plus');
+		r.update(curr);
 	}
 
 	function reset()
@@ -37,14 +37,16 @@
 		r.update(0);
 		r.removeClassName('minus');
 		r.removeClassName('plus');
-		$('comments').update('');
+		$('comments').update();
+		w.setMessage('');
 	}
 
+	var w;
 	Event.observe(window, 'load', function () {
-		var b = new ComSym_ReplyBtn({
-			elem: 'post_comment',
-			onClick: postComment.bind(this, 0),
-			onPlusClick: postComment.bind(this, 1),
+		w = new ComSym_ReplyBtn({
+			elem:        'comsym',
+			onClick:      postComment.bind(this, 0),
+			onPlusClick:  postComment.bind(this, 1),
 			onMinusClick: postComment.bind(this, -1)
 		});
 
@@ -59,9 +61,12 @@
 	he would rate this article. So, what really happens: user votes for article then 
 	he writes a comment and presses a 'Comment' button. Why not combine these actions 
 	together?</p>
+	<p>When message is empty widget behaves in 'Rate' mode, no 'Comment' button, plus/minus 
+	only. When user inputs some message widget becomes in 'Comment' mode and 'Comment' 
+	button appears. The visual representation is fully customizable by CSS.</p>
+	<p>Supports keyboard like regular buttons, such as TAB, Enter, Space.</p>
 	<p>Rate: <span id="rate">0</span></p>
-	<textarea id="comment">Some comment to add</textarea>
-	<div id="post_comment">Comment it</div>
+	<div id="comsym"></div>
 	<hr/>
 	<span id="reset">Reset</span>
 	<div id="comments"></div>

@@ -63,6 +63,30 @@ textarea {
 
 /* -----------  ComSym  -------------- */
 
+/* Widget */
+
+.comsym-widget {
+	
+}
+
+.comsym-mode_rate {
+	
+}
+
+.comsym-mode_comment {
+	
+}
+
+/* Mode: Comment */
+
+.comsym-comment_area {
+	padding: 5px;
+	border-radius:         3px;
+	-moz-border-radius:    3px;
+	-webkit-border-radius: 3px;
+	border: 1px solid #222;
+}
+
 .comsym-btn {
 	border: 1px solid #fff;
 	border-radius:         5px;
@@ -76,6 +100,8 @@ textarea {
 	position: relative;
 	margin: 5px 0;
 	cursor: pointer;
+	font-family: Verdana;
+	font-size: 14px;
 }
 
 .comsym-label_holder {
@@ -102,11 +128,14 @@ textarea {
 }
 
 .comsym-plus_btn, .comsym-minus_btn {
+	display: block;
 	cursor: pointer;
 	padding: 1px;
 	width: 16px;
 	height: 16px;
 	background-repeat: no-repeat;
+	border: 0;
+	background-color: transparent;
 }
 
 .comsym-plus_btn {
@@ -123,4 +152,22 @@ textarea {
 
 .comsym-when_on_minus {
 	background-color: #FD856E;
+}
+
+/* Mode: Rate */
+.comsym-mode_rate .comsym-plusminus_holder {
+	width: 36px;
+}
+
+.comsym-mode_rate .comsym-plus_btn, 
+.comsym-mode_rate .comsym-minus_btn {
+	float: left;
+}
+
+.comsym-mode_rate .comsym-label_holder {
+	display: none;
+}
+
+.comsym-mode_rate .comsym-comment_area {
+	height: 18px;
 }
